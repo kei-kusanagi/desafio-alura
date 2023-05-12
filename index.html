@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encriptador</title>
+    <script>
+        function myFunction() {
+            var x = document.getElementById('searchImage');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+                
+
+            } else {
+                x.style.display = 'none';
+                
+            }
+            var x = document.getElementById('textoEncriptado');
+            if (x.style.display === 'block') {
+                x.style.display = 'none';
+                
+
+            } else {
+                x.style.display = 'block';
+                
+            }
+
+        }
+        </script>
+</head>
+<body>
+    <textarea id="texto" name="texto" rows="10" cols="50" placeholder="Ingrese el texto aqui"></textarea><br>
+    <button onclick="myFunction()">Encriptar</button>
+    <button onclick="myFunction()">Desencriptar</button><br>
+
+    <div id="searchImage">
+        <img src="img/1.png">
+    </div>
+    <div id="textoEncriptado">
+        
+    </div>
+</body>
+</html>
