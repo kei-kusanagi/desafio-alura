@@ -1,41 +1,54 @@
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Encriptador</title>
-    <script>
-        function myFunction() {
-            var x = document.getElementById('searchImage');
-            if (x.style.display === 'none') {
-                x.style.display = 'block';
-                
-
-            } else {
-                x.style.display = 'none';
-                
-            }
-            var x = document.getElementById('textoEncriptado');
-            if (x.style.display === 'block') {
-                x.style.display = 'none';
-                
-
-            } else {
-                x.style.display = 'block';
-                
-            }
-
-        }
-        </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <textarea id="texto" name="texto" rows="10" cols="50" placeholder="Ingrese el texto aqui"></textarea><br>
-    <button onclick="myFunction()">Encriptar</button>
-    <button onclick="myFunction()">Desencriptar</button><br>
-
-    <div id="searchImage">
-        <img src="img/1.png">
-    </div>
-    <div id="textoEncriptado">
+    <header>
+        <img class="logo" src="img/Logo.svg" alt="logo">
+    </header>
+    <main>
+        <section class="sec1 section-container">
+            <div class="textoEncriptar">
+                <textarea 
+                id="texto" 
+                name="texto" 
+                rows="10" 
+                cols="50" 
+                placeholder="Ingrese el texto aqui"
+                class="cajatexto"></textarea><br>
+            </div>
+            <div class="especificaciones">
+                <img src="img/alerta.svg" alt="alerta">
+                <p>Solo letras minusculas y sin acentos</p>
+            </div>
         
-    </div>
+            <div class="botones">
+                <input class="boton-encriptar" type="button" onclick="encriptar()" value="Encriptar">
+                <input class="boton-desencriptar" type="button" onclick="desencriptar()" value="Desencriptar">
+            </div>
+        </section>
+        <section class="sec2 section-container">
+
+            <div class="searchImage" id="searchImage">
+                <img src="img/buscar.svg">
+            </div>
+            <div class="textoEncriptado" id="textoEncriptado">
+                <h3>Ningun mensaje fue <br> encontrado</h3>
+                <p>Ingresa el texto que desees encriptar o <br> desncriptar.</p>
+            </div>
+            <div class="copiar">
+                <input type="button" class="boton_copiar" value="Copiar">
+            </div>
+            <div class="resultado">
+                <p class="texto_resultado"></p>
+
+            </div>
+        </section>
+    </main>
 </body>
+<script src="index.js"></script>
 </html>
