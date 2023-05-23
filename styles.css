@@ -110,7 +110,7 @@ main {
 }
 
 .sec2 {
-    display: flex inline-block;
+    display: inline-block;
     top: 0;
     width: 400px;
     height: 90vh;
@@ -126,7 +126,7 @@ main {
 
 @media (max-width: 768px) and (min-width: 376px) {
     body {
-        background-color: red;
+        background-color: #f4f4fc;
     }
     .sec1{
         width: 100%;
@@ -139,7 +139,7 @@ main {
         margin-top: 4%;
         width: 100%;
         
-        display:block;
+        display: flex inline-block;
         
     }
 
@@ -176,7 +176,7 @@ main {
         
     }
     .boton-desencriptar,.boton-encriptar{
-        width: 45%;
+        width: 40%;
         position:sticky;
         justify-content: space-between;
 
@@ -277,7 +277,10 @@ main {
 .resultado {
     width: auto;
     height: auto;
-    position:relative
+    position:relative;
+    /* align-content: center; */
+    text-align: justify;
+    padding: 05%;;
 }
 
 .texto_resultado {
@@ -290,7 +293,7 @@ main {
     /* margin-bottom: 10%; */
     text-align: center;
     padding-left: auto;
-    position:relative;
+    /* position:relative; */
     
 }
 
