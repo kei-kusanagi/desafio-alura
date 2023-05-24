@@ -3,6 +3,7 @@ var botonDesncriptar = document.querySelector(".boton-desencriptar")
 var searchImage = document.querySelector(".searchImage")
 var textoEncriptado = document.querySelector(".textoEncriptado")
 var resultado = document.querySelector(".resultado")
+var boton_copiar = document.querySelector(".boton_copiar")
 
 botonEncriptar.oncick = encriptar;
 botonDesncriptar.onclick = desencriptar;
@@ -29,6 +30,7 @@ function recuperarTexto(){
 function ocultarAdelante(){
     searchImage.classList.add("ocultar");
     textoEncriptado.classList.add("ocultar");
+    boton_copiar.classList.add("mostrar");
 }
 
 

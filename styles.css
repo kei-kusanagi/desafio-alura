@@ -187,6 +187,15 @@ main {
     .searchImage{
         display: none;
     }
+    .textoEncriptado{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between center;
+        height: 90%;
+        margin-top: 20%;
+        
+    }
     .copiar{
         margin-bottom: 10px;
         display: flex;
@@ -195,7 +204,6 @@ main {
     }
     .boton_copiar{
         flex-wrap: wrap;
-        background-color: green;
         text-align: center;
         width: 800px;
         justify-content: center;
@@ -324,16 +332,16 @@ main {
 
 .copiar {
     text-align: center;
+    align-items: center;
     padding-left: auto;
     width: 100%;
-    
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
 }
 
 .boton_copiar {
+    display: none;
     width: 90%;
     height: 65px;
     border-radius: 24px;
@@ -348,4 +356,9 @@ main {
 
 .ocultar {
     display: none;
+}
+.mostrar{
+    display:block;
+    text-align: center;
+    align-items: center;
 }
