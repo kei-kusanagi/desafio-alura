@@ -321,7 +321,7 @@ main {
     height: 10% auto;
     position:relative;
     text-align: justify;
-    padding: 5%;;
+    padding: 5%;
 }
 
 .texto_resultado {
@@ -341,7 +341,7 @@ main {
 }
 
 .boton_copiar {
-    display: none;
+    /* display: none; */
     width: 90%;
     height: 65px;
     border-radius: 24px;
@@ -355,10 +355,14 @@ main {
 }
 
 .ocultar {
-    display: none;
+    /* display: none; */
+    visibility: hidden;
+    width: 0%;
+    height: 0%;
 }
 .mostrar{
-    display:block;
+    /* display:block; */
+    visibility: visible;
     text-align: center;
     align-items: center;
 }
