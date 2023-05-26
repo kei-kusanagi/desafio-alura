@@ -138,3 +138,49 @@ const btnCopiar = document.querySelector(".boton_copiar");
         document.body.removeChild(message);
     }, 1000);
     })
+
+
+function verificarTexto(texto) {
+    var regex = /[A-ZÁÉÍÓÚÜ]/;
+    var acentos = /[áéíóúü]/i;
+    
+    if (regex.test(texto) || acentos.test(texto)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+    
+
+    var cajaTexto = document.querySelector(".cajatexto");
+    cajaTexto.addEventListener("input", function () {
+        var texto = cajaTexto.value;
+        var esValido = verificarTexto(texto);
+    
+        if (esValido == false) {
+            var message_acento = document.createElement("div");
+            message_acento.textContent = "Texto no válido";
+            message_acento.style.background = "rgba(10, 56, 113, 0.8)";
+            message_acento.style.color =  "#ffffff";
+            message_acento.style.position = "fixed";
+            message_acento.style.bottom = "0vh";
+            message_acento.style.left = "50%";
+            message_acento.style.borderRadius = "10px";
+            message_acento.style.transform = "translate(-50%, -50%)";
+            message_acento.style.margin = "8px";
+            message_acento.style.textAlign = "center";
+            document.body.appendChild(message_acento);
+                    // Ocultar los botones
+            if (botonEncriptar && botonDesncriptar) {
+                botonEncriptar.style.visibility = "hidden";
+                botonDesncriptar.style.visibility = "hidden";
+            }
+            } else {
+            console.log("El texto es válido");
+                // Mostrar los botones
+                if (botonEncriptar && botonDesncriptar) {
+                    botonEncriptar.style.visibility = "visible";
+                    botonDesncriptar.style.visibility = "visible";
+                }
+            }
+        });
