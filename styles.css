@@ -46,6 +46,7 @@ main {
     font-size: 28px;
     font-weight: 400;
     font-family: 'Inter', sans-serif;
+    resize: none;
 }
 
 .cajatexto::placeholder{
