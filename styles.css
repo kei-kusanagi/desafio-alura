@@ -104,8 +104,8 @@ main {
     cursor: pointer;
 }
 .boton-encriptar:hover{
-    background-color: #022958;
-    color: rgb(166, 219, 251);
+    font-size: 18px;
+    background: linear-gradient(to left, #0a3871, #116cdb, #116cdb,  #0a3871);
 }
 .boton-desencriptar{
     
@@ -123,7 +123,8 @@ main {
     cursor: pointer;
 }
 .boton-desencriptar:hover{
-    background-color: rgb(223, 246, 252);
+    font-size: 18px;
+    background: linear-gradient(to left,#a4fab4, #f4f4fc,#f4f4fc, #a4fab4);
 }
 
 .section-container {
@@ -349,7 +350,7 @@ main {
     width: 90%;
     height: 10% auto;
     position:relative;
-    text-align: justify;
+    text-align: center;
     padding: 5%;;
 }
 
@@ -374,7 +375,7 @@ main {
     width: 35vh;
     height: 65px;
     border-radius: 24px;
-    background-color: #f4f4fc;
+    background: #f4f4fc;
     color: #0a3871;
     font-size: 16px;
     font-weight: 400;
@@ -382,6 +383,10 @@ main {
     border-color: #0a3871;
     cursor: pointer;
     position: inherit;
+}
+.boton_copiar:hover{
+    font-size: 18px;
+    background: linear-gradient(to right, #fbf8a6, #f4f4fc,#f4f4fc, #fbf8a6);
 }
 
 .ocultar {
