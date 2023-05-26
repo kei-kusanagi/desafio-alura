@@ -4,6 +4,7 @@ var searchImage = document.querySelector(".searchImage")
 var textoEncriptado = document.querySelector(".textoEncriptado")
 var resultado = document.querySelector(".resultado")
 var boton_copiar = document.querySelector(".boton_copiar")
+var especificaciones = document.querySelector(".especificaciones")
 
 botonEncriptar.oncick = encriptar;
 botonDesncriptar.onclick = desencriptar;
@@ -152,35 +153,54 @@ function verificarTexto(texto) {
 }
     
 
-    var cajaTexto = document.querySelector(".cajatexto");
-    cajaTexto.addEventListener("input", function () {
-        var texto = cajaTexto.value;
-        var esValido = verificarTexto(texto);
-    
-        if (esValido == false) {
-            var message_acento = document.createElement("div");
-            message_acento.textContent = "Texto no válido";
-            message_acento.style.background = "rgba(10, 56, 113, 0.8)";
-            message_acento.style.color =  "#ffffff";
-            message_acento.style.position = "fixed";
-            message_acento.style.bottom = "0vh";
-            message_acento.style.left = "50%";
-            message_acento.style.borderRadius = "10px";
-            message_acento.style.transform = "translate(-50%, -50%)";
-            message_acento.style.margin = "8px";
-            message_acento.style.textAlign = "center";
-            document.body.appendChild(message_acento);
-                    // Ocultar los botones
-            if (botonEncriptar && botonDesncriptar) {
-                botonEncriptar.style.visibility = "hidden";
-                botonDesncriptar.style.visibility = "hidden";
-            }
-            } else {
-            console.log("El texto es válido");
-                // Mostrar los botones
-                if (botonEncriptar && botonDesncriptar) {
-                    botonEncriptar.style.visibility = "visible";
-                    botonDesncriptar.style.visibility = "visible";
-                }
-            }
-        });
+var cajaTexto = document.querySelector(".cajatexto");
+var mensajeAcento;
+
+cajaTexto.addEventListener("input", function () {
+    var texto = cajaTexto.value;
+    var esValido = verificarTexto(texto);
+
+    if (esValido == false) {
+    // Crear el mensaje si no existe
+    if (!mensajeAcento) {
+        mensajeAcento = document.createElement("div");
+        mensajeAcento.textContent = "Texto no válido favor de corregir";
+        mensajeAcento.style.background = "rgba(10, 56, 113, 0.8)";
+        mensajeAcento.style.color = "#ffffff";
+        mensajeAcento.style.width = "30vh";
+        mensajeAcento.style.height = "5vh";
+        mensajeAcento.style.position = "fixed";
+        mensajeAcento.style.top = "1vh";
+        mensajeAcento.style.left = "50%";
+        mensajeAcento.style.borderRadius = "10px";
+        mensajeAcento.style.transform = "translate(-50%, -50%)";
+        mensajeAcento.style.margin = "8px";
+        mensajeAcento.style.textAlign = "center";
+        mensajeAcento.style.display = "flex";
+        mensajeAcento.style.flexDirection = "column-reverse";
+        document.body.appendChild(mensajeAcento);
+    }
+
+    // Ocultar los botones
+    if (botonEncriptar && botonDesncriptar) {
+        botonEncriptar.style.visibility = "hidden";
+        botonDesncriptar.style.visibility = "hidden";
+        especificaciones.classList.add("animacion");
+    }
+    } else {
+    console.log("El texto es válido");
+
+    // Mostrar los botones
+    if (botonEncriptar && botonDesncriptar) {
+        botonEncriptar.style.visibility = "visible";
+        botonDesncriptar.style.visibility = "visible";
+        especificaciones.classList.remove("animacion");
+    }
+
+    // Eliminar el mensaje si existe
+    if (mensajeAcento) {
+        document.body.removeChild(mensajeAcento);
+        mensajeAcento = null;
+    }
+    }
+    });

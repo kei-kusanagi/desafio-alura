@@ -53,12 +53,32 @@ main {
 }
 
 .especificaciones{
-    display: inline-block;
+    position: relative;
     display: flex;
-    padding: 0;
+    padding: 8;
     color: #495057;
     font-size: 12px;
 }
+
+
+.especificaciones.animacion {
+    animation: pulse 1.5s ease-in-out infinite;
+    font-size: 20px;
+    color: red;
+}
+
+@keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
 
 .botones{
     text-align: center;
@@ -80,7 +100,12 @@ main {
     font-weight: 400;
     font-family: 'Inter', sans-serif;
     margin-right: 20px;
+    margin-top: 20px;
     cursor: pointer;
+}
+.boton-encriptar:hover{
+    background-color: #022958;
+    color: rgb(166, 219, 251);
 }
 .boton-desencriptar{
     
@@ -94,7 +119,11 @@ main {
     font-family: 'Inter', sans-serif;
     border-color: #0a3871;
     margin-right: 20px;
+    margin-top: 20px;
     cursor: pointer;
+}
+.boton-desencriptar:hover{
+    background-color: rgb(223, 246, 252);
 }
 
 .section-container {
