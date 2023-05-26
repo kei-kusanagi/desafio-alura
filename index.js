@@ -120,4 +120,21 @@ const btnCopiar = document.querySelector(".boton_copiar");
     btnCopiar.addEventListener("click", copiar = () => {
     var contenido = document.querySelector(".resultado").textContent;
     navigator.clipboard.writeText(contenido);
+      // Mostrar el mensaje
+    var message = document.createElement("div");
+    message.textContent = "Texto copiado en el portapapeles";
+    message.style.background = "rgba(10, 56, 113, 0.8)";
+    message.style.color =  "#ffffff";
+    message.style.position = "fixed";
+    message.style.bottom = "0vh";
+    message.style.left = "50%";
+    message.style.borderRadius = "10px";
+    message.style.transform = "translate(-50%, -50%)";
+    message.style.margin = "8px";
+    message.style.textAlign = "center";
+    document.body.appendChild(message);
+
+    setTimeout(function() {
+        document.body.removeChild(message);
+    }, 1000);
     })
